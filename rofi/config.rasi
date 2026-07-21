@@ -1,4 +1,5 @@
 configuration {
   show-icons: true;
+  display-drun: "   Search ";
 }
 @theme "~/.config/rofi/theme.rasi"
