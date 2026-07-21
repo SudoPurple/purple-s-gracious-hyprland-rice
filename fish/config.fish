@@ -1,3 +1,6 @@
+# Disable the default Fish welcome greeting
+set -g fish_greeting
+
 if status is-interactive
     # Enable native Vi key bindings (automatically manages block/beam cursor shapes)
     set -g fish_key_bindings fish_vi_key_bindings

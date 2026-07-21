@@ -1,0 +1,22 @@
+# Set timeout for commands executed by starship (in milliseconds)
+command_timeout = 1000
+
+# Disable nodejs module to prevent slow scanning and timeouts
+[nodejs]
+disabled = true
+
+# Disable package version checks to speed up the prompt in project directories
+[package]
+disabled = true
+
+# Disable other heavy/unused language modules to keep it blazingly fast
+[ruby]
+disabled = true
+[python]
+disabled = true
+[golang]
+disabled = true
+[rust]
+disabled = true
+[php]
+disabled = true
