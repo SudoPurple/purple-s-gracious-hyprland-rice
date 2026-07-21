@@ -32,7 +32,7 @@ for config in "${configs[@]}"; do
 done
 
 # 2. Symlink custom scripts to ~/.local/bin/
-binaries=(rofi-cliphist rishot)
+binaries=(rofi-cliphist rishot compress-video)
 mkdir -p "$BIN_DIR"
 for binary in "${binaries[@]}"; do
   target="$BIN_DIR/$binary"

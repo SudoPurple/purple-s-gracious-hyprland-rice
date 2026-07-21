@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Script to compress video recordings using ffmpeg (H.265/HEVC)
+
+set -euo pipefail
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $(basename "$0") <video_file>"
+  exit 1
+fi
+
+INPUT_FILE="$1"
+
+if [ ! -f "$INPUT_FILE" ]; then
+  echo "Error: File '$INPUT_FILE' not found."
+  exit 1
+fi
+
+# Determine extension and output filename
+filename=$(basename -- "$INPUT_FILE")
+extension="${filename##*.}"
+filename_no_ext="${filename%.*}"
+dirname=$(dirname -- "$INPUT_FILE")
+
+OUTPUT_FILE="$dirname/${filename_no_ext}_compressed.${extension}"
+
+echo "=== Compressing Video ==="
+echo "Input:  $INPUT_FILE"
+echo "Output: $OUTPUT_FILE"
+echo "Quality: H.265 (CRF 25, visually lossless, highly compressed)"
+echo "Please wait..."
+
+# We use libx265 at CRF 25 with preset fast to balance speed and compression ratio on your CPU
+ffmpeg -y -i "$INPUT_FILE" -c:v libx265 -crf 25 -preset fast -c:a aac -b:a 128k "$OUTPUT_FILE"
+
+echo "=== Compression Complete! ==="
+orig_size=$(du -h "$INPUT_FILE" | cut -f1)
+new_size=$(du -h "$OUTPUT_FILE" | cut -f1)
+echo "Original Size:   $orig_size"
+echo "Compressed Size: $new_size"
