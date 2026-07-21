@@ -1,11 +1,11 @@
 # Don't print a newline before the prompt
 add_newline = false
 
-# Custom block-based prompt (solid bars without font-breaking triangles)
+# Individual rounded pill/capsule configuration
 format = """
-[ $username$hostname ](bg:#3B4252 fg:#ECEFF4)\
-[ $directory ](bg:#4C566A fg:#ECEFF4)\
-[ $git_branch$git_status ](bg:#5E81AC fg:#ECEFF4) \
+[](fg:#3B4252)[$username$hostname](bg:#3B4252 fg:#ECEFF4)[](fg:#3B4252) \
+[](fg:#4C566A)[$directory](bg:#4C566A fg:#ECEFF4)[](fg:#4C566A) \
+[](fg:#5E81AC)[$git_branch$git_status](bg:#5E81AC fg:#ECEFF4)[](fg:#5E81AC) \
 $line_break\
 [❯](bold green) """
 
