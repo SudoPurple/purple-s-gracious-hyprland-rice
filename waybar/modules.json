@@ -5,9 +5,9 @@
         "disable-scroll": false,
         "all-outputs": true,
         "format": "{name}",
-        "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = {name} })'",
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"+1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"-1\" })'"
     },
 
     "hyprland/window":{
