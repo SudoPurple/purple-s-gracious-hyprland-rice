@@ -3,39 +3,39 @@
 add_newline = false
 
 format = """
-[](#9A348E)\
+[](color4)\
 $os\
 $username\
 $hostname\
-[](bg:#DA627D fg:#9A348E)\
+[](bg:color5 fg:color4)\
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
+[](fg:color5 bg:color6)\
 $git_branch\
 $git_status\
-[ ](fg:#FCA17D)\
+[ ](fg:color6)\
 """
 
 [username]
 show_always = true
-style_user = "bg:#9A348E"
-style_root = "bg:#9A348E"
+style_user = "bg:color4"
+style_root = "bg:color4"
 format = '[$user]($style)'
 disabled = false
 
 [hostname]
 ssh_only = false
-style = "bg:#9A348E"
+style = "bg:color4"
 format = '[@$hostname ]($style)'
 disabled = false
 
 # An alternative to the username module which displays a symbol that
 # represents the current operating system
 [os]
-style = "bg:#9A348E"
+style = "bg:color4"
 disabled = true # Disabled by default
 
 [directory]
-style = "bg:#DA627D"
+style = "bg:color5"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -80,11 +80,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:#FCA17D"
+style = "bg:color6"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#FCA17D"
+style = "bg:color6"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
