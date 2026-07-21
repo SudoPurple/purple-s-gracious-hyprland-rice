@@ -192,7 +192,8 @@ if (( found == 0 )); then
   printf "\n%s\n" "$DUNST_BLOCK" >> "$tmp"
 fi
 
-mv "$tmp" "$DUNST_RC"
+cat "$tmp" > "$DUNST_RC"
+rm -f "$tmp"
 
 # Restart dunst so new colors apply immediately
 pkill -x dunst >/dev/null 2>&1 || true

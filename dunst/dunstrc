@@ -60,28 +60,28 @@
 
 # === MATUGEN DUNST START ===
 [global]
-frame_color = "#deb8f7"
-separator_color = "#968e98"
-highlight = "#deb8f7"
+frame_color = "#b2d189"
+separator_color = "#8f9285"
+highlight = "#b2d189"
 progress_bar = true
 progress_bar_frame_width = 1
 progress_bar_height = 8
-progress_bar_frame_color = "#968e98"
+progress_bar_frame_color = "#8f9285"
 progress_bar_min_width = 100
 progress_bar_max_width = 300
 
 [urgency_low]
-background = "#161217"
-foreground = "#e8e0e8"
-frame_color = "#968e98"
+background = "#12140e"
+foreground = "#e2e3d8"
+frame_color = "#8f9285"
 
 [urgency_normal]
-background = "#161217"
-foreground = "#e8e0e8"
-frame_color = "#deb8f7"
+background = "#12140e"
+foreground = "#e2e3d8"
+frame_color = "#b2d189"
 
 [urgency_critical]
 background = "#ffb4ab"
-foreground = "#402357"
+foreground = "#203701"
 frame_color = "#ffb4ab"
 # === MATUGEN DUNST END ===
