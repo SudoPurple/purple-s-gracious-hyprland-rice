@@ -1,0 +1,74 @@
+@import "~/.config/rofi/matugen.rasi"
+
+* {
+  background-color: transparent;
+  text-color: @fg;
+}
+
+window {
+  location: center;
+  anchor: center;
+  width: 35%;
+  padding: 14px;
+
+  background-color: @bg;
+
+  border: 2px;
+  border-color: @border;
+
+  border-radius: 14px;
+}
+
+mainbox {
+  spacing: 10px;
+  background-color: transparent;
+}
+
+inputbar {
+  background-color: @surface;
+  border-radius: 12px;
+  padding: 10px;
+  spacing: 8px;
+}
+
+prompt {
+  text-color: @accent;
+}
+
+textbox-prompt-colon {
+  text-color: @accent;
+}
+
+entry {
+  background-color: transparent;
+  text-color: @fg;
+}
+
+listview {
+  background-color: transparent;
+  spacing: 6px;
+  padding: 2px;
+
+  lines: 8;
+  fixed-height: true;
+}
+
+element {
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+element selected {
+  background-color: @selectedbg;
+  text-color: @selectedfg;
+}
+
+element-icon {
+  size: 1.0em;
+}
+
+scrollbar {
+  handle-width: 6px;
+  background-color: transparent;
+}

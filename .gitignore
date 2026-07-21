@@ -1,0 +1,5 @@
+# Ignore swap files and backups
+*.swp
+*.bak
+*~
+.DS_Store

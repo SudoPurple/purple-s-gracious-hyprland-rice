@@ -1,0 +1,8 @@
+:root{
+  --bg:       {{colors.background.default.hex}}ff;
+  --surface:  {{colors.surface_container.default.hex}}e6;
+  --fg:       {{colors.on_background.default.hex}}ff;
+  --outline:  {{colors.outline.default.hex}}80;
+  --accent:   {{colors.primary.default.hex}}ff;
+  --accentfg: {{colors.on_primary.default.hex}}ff;
+}

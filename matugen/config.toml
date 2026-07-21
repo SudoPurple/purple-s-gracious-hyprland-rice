@@ -1,0 +1,13 @@
+[config]
+
+[templates.waybar]
+input_path = "~/.config/matugen/templates/waybar.css"
+output_path = "~/.config/waybar/colors.css"
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/rofi.rasi"
+output_path = "~/.config/rofi/matugen.rasi"
+
+[templates.startpage]
+input_path = "~/.config/matugen/templates/startpage.css"
+output_path = "~/.local/share/startpage/colors.css"
