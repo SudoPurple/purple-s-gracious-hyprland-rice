@@ -1,3 +1,5 @@
+add_newline = false
+
 # Custom prompt format: Only show username, hostname, directory, git info, and the prompt character.
 # This completely bypasses all programming language version modules ("via vX.X.X").
 format = """
