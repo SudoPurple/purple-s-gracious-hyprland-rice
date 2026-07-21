@@ -7,7 +7,6 @@ A fully dynamic, Material You-themed Hyprland desktop environment, powered by **
 ## 🎨 Features
 * **Lua Configured Hyprland:** All window manager configurations are written programmatically in Lua for clean structure and modularity.
 * **Dynamic Color Engine:** Pressing `SUPER + SHIFT + W` cycles the wallpaper and triggers **Matugen** to extract a matching Material color palette, instantly styling Waybar, Rofi, Dunst, Kitty, btop, and your active window borders on-the-fly.
-* **Hybrid GPU Offloading:** Built-in gaming optimizations and offload scripts to leverage the AMD Radeon R5 M230 GPU.
 
 ---
 
