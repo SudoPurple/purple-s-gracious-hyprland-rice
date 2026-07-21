@@ -1,22 +1,46 @@
-# Set timeout for commands executed by starship (in milliseconds)
-command_timeout = 1000
+# Custom prompt format: Only show username, hostname, directory, git info, and the prompt character.
+# This completely bypasses all programming language version modules ("via vX.X.X").
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$line_break\
+$character"""
 
-# Disable nodejs module to prevent slow scanning and timeouts
-[nodejs]
-disabled = true
+# Show the username always
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "bold cyan"
+style_root = "bold red"
 
-# Disable package version checks to speed up the prompt in project directories
-[package]
-disabled = true
+# Show the hostname (set ssh_only = false to show it locally too)
+[hostname]
+ssh_only = false
+format = "@[$hostname]($style) "
+style = "bold green"
 
-# Disable other heavy/unused language modules to keep it blazingly fast
-[ruby]
-disabled = true
-[python]
-disabled = true
-[golang]
-disabled = true
-[rust]
-disabled = true
-[php]
-disabled = true
+# Configure the directory path display
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+format = "[$path]($style) "
+style = "bold blue"
+
+# Configure git branch symbol and style
+[git_branch]
+symbol = " "
+format = "on [$symbol$branch]($style) "
+style = "bold magenta"
+
+# Configure git status
+[git_status]
+format = "([\\[$all_status$ahead_behind\\]]($style) )"
+style = "bold red"
+
+# Configure the input prompt character
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
