@@ -25,7 +25,7 @@ disabled = false
 [hostname]
 ssh_only = false
 style = "bg:#9A348E"
-format = '@[$hostname ]($style)'
+format = '[@$hostname ]($style)'
 disabled = false
 
 # An alternative to the username module which displays a symbol that
