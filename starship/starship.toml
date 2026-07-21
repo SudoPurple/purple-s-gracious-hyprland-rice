@@ -1,45 +1,51 @@
 # Don't print a newline before the prompt
 add_newline = false
 
-# Clean, text-only universal format (no background blocks, matches any theme!)
+# Custom block-based prompt (solid bars without font-breaking triangles)
 format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_status\
+[ $username$hostname ](bg:#3B4252 fg:#ECEFF4)\
+[ $directory ](bg:#4C566A fg:#ECEFF4)\
+[ $git_branch$git_status ](bg:#5E81AC fg:#ECEFF4) \
 $line_break\
-$character"""
+[❯](bold green) """
 
-# Username style (green)
+# Username configuration
 [username]
 show_always = true
-format = "[$user](bold green)"
+style_user = "bg:#3B4252 fg:#ECEFF4"
+style_root = "bg:#3B4252 fg:#BF616A"
+format = "$user"
 disabled = false
 
-# Hostname style (blue)
+# Hostname configuration
 [hostname]
 ssh_only = false
-format = "@[$hostname](bold blue) "
+style = "bg:#3B4252 fg:#ECEFF4"
+format = "@$hostname"
 disabled = false
 
-# Directory style (cyan)
+# Directory configuration
 [directory]
+style = "bg:#4C566A fg:#ECEFF4"
+format = "$path"
 truncation_length = 3
 truncation_symbol = "…/"
-format = "[$path](bold cyan) "
 
-# Git branch style (magenta)
+# Directory substitutions for clean icons
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+# Git branch configuration
 [git_branch]
 symbol = " "
-format = "on [$symbol$branch](bold magenta) "
+style = "bg:#5E81AC fg:#ECEFF4"
+format = "$symbol$branch"
 disabled = false
 
-# Git status style (red)
+# Git status configuration
 [git_status]
-format = "([\\[$all_status$ahead_behind\\]](bold red) )"
-
-# Input prompt character (green arrow)
-[character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
+style = "bg:#5E81AC fg:#ECEFF4"
+format = "([\\[$all_status$ahead_behind\\]])"
