@@ -11,13 +11,6 @@ A fully dynamic, Material You-themed Hyprland desktop environment, powered by **
 
 ---
 
-## 💻 Hardware Specs
-* **OS:** Arch Linux
-* **CPU:** Intel Haswell-ULT (Intel Core)
-* **Integrated GPU:** Intel HD Graphics 4400 (`i915` driver)
-* **Dedicated GPU:** AMD Radeon R5 M230 (`amdgpu` GCN 1.0 Vulkan-enabled driver)
-
----
 
 ## 🛠️ Software Stack & Components
 * **WM:** [Hyprland](https://hyprland.org/) (Lua backend)
