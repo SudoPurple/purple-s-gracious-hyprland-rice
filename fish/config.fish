@@ -5,6 +5,9 @@ if status is-interactive
     # Enable native Vi key bindings (automatically manages block/beam cursor shapes)
     set -g fish_key_bindings fish_vi_key_bindings
 
+    # Set the correct path for Starship config
+    set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
+
     # Initialize Starship prompt
     starship init fish | source
 
