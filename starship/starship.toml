@@ -48,4 +48,4 @@ disabled = false
 # Git status configuration
 [git_status]
 style = "bg:#5E81AC fg:#ECEFF4"
-format = "([\\[$all_status$ahead_behind\\]])"
+format = '([$all_status$ahead_behind])'
