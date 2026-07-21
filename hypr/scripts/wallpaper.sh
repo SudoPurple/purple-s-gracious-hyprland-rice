@@ -50,7 +50,7 @@ WALL="${wallpapers[$index]}"
 echo "$index" > "$HISTORY_FILE"
 
 echo "Setting wallpaper: $WALL"
-timeout 5s awww img "$WALL" || true
+timeout 5s awww img --transition-type random --transition-step 90 --transition-duration 1.2 --transition-fps 75 "$WALL" || true
 
 # Generate colors (writes WAYBAR_COLORS via your matugen template)
 timeout 30s matugen image "$WALL" --source-color-index 1 --quiet
