@@ -16,23 +16,23 @@ icons=1
 max-icon-size=64
 
 # === MATUGEN MAKO START ===
-background-color=#191114d9
-text-color=#efdfe2
-border-color=#ffb0ca
-progress-color=over #ffb0ca
+background-color=#1a1110e6
+text-color=#f1dedc
+border-color=#ffb3ad
+progress-color=over #ffb3ad
 
 [urgency=low]
-background-color=#191114d9
-text-color=#efdfe2
-border-color=#9e8c91
+background-color=#1a1110e6
+text-color=#f1dedc
+border-color=#a08c8a
 
 [urgency=normal]
-background-color=#191114d9
-text-color=#efdfe2
-border-color=#ffb0ca
+background-color=#1a1110e6
+text-color=#f1dedc
+border-color=#ffb3ad
 
 [urgency=high]
-background-color=#ffb4abd9
-text-color=#541d34
+background-color=#ffb4abe6
+text-color=#571e1b
 border-color=#ffb4ab
 # === MATUGEN MAKO END ===
