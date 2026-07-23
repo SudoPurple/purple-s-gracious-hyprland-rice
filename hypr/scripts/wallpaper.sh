@@ -142,23 +142,23 @@ MAKO_END="# === MATUGEN MAKO END ==="
 
 MAKO_BLOCK="$(cat <<EOF
 $MAKO_START
-background-color=${SURFACE}e6
+background-color=${SURFACE}b3
 text-color=${ON_SURFACE}
 border-color=${PRIMARY}
 progress-color=over ${PRIMARY}
 
 [urgency=low]
-background-color=${SURFACE}e6
+background-color=${SURFACE}b3
 text-color=${ON_SURFACE}
 border-color=${OUTLINE}
 
 [urgency=normal]
-background-color=${SURFACE}e6
+background-color=${SURFACE}b3
 text-color=${ON_SURFACE}
 border-color=${PRIMARY}
 
 [urgency=high]
-background-color=${ERROR}e6
+background-color=${ERROR}b3
 text-color=${ON_PRIMARY}
 border-color=${ERROR}
 $MAKO_END
