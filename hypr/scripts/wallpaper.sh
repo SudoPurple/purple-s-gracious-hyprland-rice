@@ -26,7 +26,7 @@ HISTORY_FILE="$HOME/.cache/last_wallpaper_index"
 WAYBAR_COLORS="$HOME/.config/waybar/colors.css"
 KITTY_DYNAMIC="$HOME/.config/kitty/matugen.conf"
 
-DUNST_RC="$HOME/.config/dunst/dunstrc"
+MAKO_CONF="$HOME/.config/mako/config"
 
 BTOP_CONF="$HOME/.config/btop/btop.conf"
 BTOP_THEME_DIR="$HOME/.config/btop/themes"
@@ -133,41 +133,35 @@ active_tab_background   ${PRIMARY}
 active_tab_foreground   ${ON_PRIMARY}
 EOF
 
-# --- Dunst adaptive: update a managed block and restart dunst ---
-mkdir -p "$(dirname "$DUNST_RC")"
-[[ -f "$DUNST_RC" ]] || printf "[global]\n" > "$DUNST_RC"
+# --- Mako adaptive: update a managed block and reload mako ---
+mkdir -p "$(dirname "$MAKO_CONF")"
+[[ -f "$MAKO_CONF" ]] || touch "$MAKO_CONF"
 
-DUNST_START="# === MATUGEN DUNST START ==="
-DUNST_END="# === MATUGEN DUNST END ==="
+MAKO_START="# === MATUGEN MAKO START ==="
+MAKO_END="# === MATUGEN MAKO END ==="
 
-DUNST_BLOCK="$(cat <<EOF
-$DUNST_START
-[global]
-frame_color = "${PRIMARY}"
-separator_color = "${OUTLINE}"
-highlight = "${PRIMARY}"
-progress_bar = true
-progress_bar_frame_width = 1
-progress_bar_height = 8
-progress_bar_frame_color = "${OUTLINE}"
-progress_bar_min_width = 100
-progress_bar_max_width = 300
+MAKO_BLOCK="$(cat <<EOF
+$MAKO_START
+background-color=${SURFACE}
+text-color=${ON_SURFACE}
+border-color=${PRIMARY}
+progress-color=over ${PRIMARY}
 
-[urgency_low]
-background = "${SURFACE}"
-foreground = "${ON_SURFACE}"
-frame_color = "${OUTLINE}"
+[urgency=low]
+background-color=${SURFACE}
+text-color=${ON_SURFACE}
+border-color=${OUTLINE}
 
-[urgency_normal]
-background = "${SURFACE}"
-foreground = "${ON_SURFACE}"
-frame_color = "${PRIMARY}"
+[urgency=normal]
+background-color=${SURFACE}
+text-color=${ON_SURFACE}
+border-color=${PRIMARY}
 
-[urgency_critical]
-background = "${ERROR}"
-foreground = "${ON_PRIMARY}"
-frame_color = "${ERROR}"
-$DUNST_END
+[urgency=high]
+background-color=${ERROR}
+text-color=${ON_PRIMARY}
+border-color=${ERROR}
+$MAKO_END
 EOF
 )"
 
@@ -175,29 +169,36 @@ tmp="$(mktemp)"
 inblock=0
 found=0
 while IFS= read -r line || [[ -n "$line" ]]; do
-  if [[ "$line" == "$DUNST_START" ]]; then
+  if [[ "$line" == "$MAKO_START" ]]; then
     inblock=1
     found=1
-    printf "%s\n" "$DUNST_BLOCK" >> "$tmp"
+    printf "%s\n" "$MAKO_BLOCK" >> "$tmp"
     continue
   fi
   if (( inblock == 1 )); then
-    [[ "$line" == "$DUNST_END" ]] && inblock=0
+    [[ "$line" == "$MAKO_END" ]] && inblock=0
     continue
   fi
   printf "%s\n" "$line" >> "$tmp"
-done < "$DUNST_RC"
+done < "$MAKO_CONF"
 
 if (( found == 0 )); then
-  printf "\n%s\n" "$DUNST_BLOCK" >> "$tmp"
+  printf "\n%s\n" "$MAKO_BLOCK" >> "$tmp"
 fi
 
-cat "$tmp" > "$DUNST_RC"
+cat "$tmp" > "$MAKO_CONF"
 rm -f "$tmp"
 
-# Restart dunst so new colors apply immediately
+# Kill dunst if it's running
 pkill -x dunst >/dev/null 2>&1 || true
-setsid -f dunst >/dev/null 2>&1 || true
+
+# Reload or start Mako
+if makoctl reload >/dev/null 2>&1; then
+  :
+else
+  pkill -x mako >/dev/null 2>&1 || true
+  setsid -f mako >/dev/null 2>&1 || true
+fi
 
 # --- btop adaptive: write theme + set it in btop.conf (applies next btop start) ---
 mkdir -p "$BTOP_THEME_DIR"

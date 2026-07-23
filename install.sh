@@ -13,7 +13,7 @@ echo "=== Setting up Hyprland Rice Symlinks ==="
 backup_dir="$HOME/backup_configs_$(date +%Y%m%d_%H%M%S)"
 
 # 1. Symlink config folders to ~/.config/
-configs=(hypr waybar rofi kitty dunst matugen fastfetch fish starship)
+configs=(hypr waybar rofi kitty dunst mako matugen fastfetch fish starship)
 for config in "${configs[@]}"; do
   target="$CONFIG_DIR/$config"
   source_dir="$DOTFILES_DIR/$config"

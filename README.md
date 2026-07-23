@@ -24,7 +24,7 @@ A fully dynamic, Material You-themed Hyprland desktop environment, powered by **
 
 ## 🎨 Features
 * **Lua Configured Hyprland:** All window manager configurations are written programmatically in Lua for clean structure and modularity.
-* **Dynamic Color Engine:** Pressing `SUPER + SHIFT + W` cycles the wallpaper and triggers **Matugen** to extract a matching Material color palette, instantly styling Waybar, Rofi, Dunst, Kitty, btop, and active window borders on-the-fly.
+* **Dynamic Color Engine:** Pressing `SUPER + SHIFT + W` cycles the wallpaper and triggers **Matugen** to extract a matching Material color palette, instantly styling Waybar, Rofi, Mako, Kitty, btop, and active window borders on-the-fly.
 * **Blazing Fast Shell (Fish + Starship):** Native C++ powered Fish interactive shell with custom Vi keybindings and a sleek Starship prompt.
 * **Interactive Waybar Workspace Pill:** Clickable and scrollable workspace navigation directly on the bar.
 * **Video Compression Utility (`compress-video`):** Includes a built-in `compress-video` CLI tool using H.265 (`libx265`) to shrink screen recordings by up to 80% without quality loss.
@@ -38,7 +38,7 @@ A fully dynamic, Material You-themed Hyprland desktop environment, powered by **
 * **Bar:** [Waybar](https://github.com/Alexays/Waybar)
 * **Launcher:** [Rofi](https://github.com/davatorium/rofi)
 * **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
-* **Notification Daemon:** [Dunst](https://dunst-project.org/)
+* **Notification Daemon:** [Mako](https://github.com/emersion/mako)
 * **Color Generator:** [Matugen](https://github.com/InioAsgards/matugen)
 * **Info Fetcher:** [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 * **Wallpaper Manager:** `awww-daemon`
@@ -83,5 +83,5 @@ A fully dynamic, Material You-themed Hyprland desktop environment, powered by **
 
 3. **Required Packages:**
    ```bash
-   sudo pacman -S hyprland waybar rofi kitty dunst matugen fastfetch fish starship cliphist playerctl brightnessctl wpctl ffmpeg libva-intel-driver libva-utils
+   sudo pacman -S hyprland waybar rofi kitty mako matugen fastfetch fish starship cliphist playerctl brightnessctl wpctl ffmpeg libva-intel-driver libva-utils
    ```

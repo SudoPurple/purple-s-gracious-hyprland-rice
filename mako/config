@@ -1,0 +1,38 @@
+# Mako notification daemon configuration
+# Managed dynamically by wallpaper.sh (Matugen)
+
+font=JetBrains Mono 10
+width=360
+height=150
+margin=15
+padding=12
+border-size=2
+border-radius=12
+default-timeout=5000
+anchor=top-right
+max-visible=5
+sort=-time
+icons=1
+max-icon-size=64
+
+# === MATUGEN MAKO START ===
+background-color=#121318
+text-color=#e3e1e9
+border-color=#b7c4ff
+progress-color=over #b7c4ff
+
+[urgency=low]
+background-color=#121318
+text-color=#e3e1e9
+border-color=#90909a
+
+[urgency=normal]
+background-color=#121318
+text-color=#e3e1e9
+border-color=#b7c4ff
+
+[urgency=high]
+background-color=#ffb4ab
+text-color=#1f2d61
+border-color=#ffb4ab
+# === MATUGEN MAKO END ===
