@@ -319,9 +319,9 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 -- Global keyboard shortcuts for Spotify / media control
-hl.bind("SUPER SHIFT", "space", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("SUPER SHIFT", "Right", hl.dsp.exec_cmd("playerctl next"),       { locked = true })
-hl.bind("SUPER SHIFT", "Left",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+hl.bind("SUPER + SHIFT + space", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("SUPER + SHIFT + Right", hl.dsp.exec_cmd("playerctl next"),       { locked = true })
+hl.bind("SUPER + SHIFT + Left",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 
 --------------------------------
