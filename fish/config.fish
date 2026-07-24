@@ -32,3 +32,6 @@ set -gx mesa_glthread true
 
 # Hybrid GPU offloader (runs command on the dedicated AMD GPU)
 alias prime-run="env DRI_PRIME=1"
+
+# Audio stream recovery alias (moves all active audio streams back to physical headphones/speakers)
+alias fix-audio="pactl list sink-inputs short | awk '{print \$1}' | xargs -I{} pactl move-sink-input {} alsa_output.pci-0000_00_1b.0.analog-stereo"
