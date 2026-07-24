@@ -51,7 +51,7 @@ local menu        = "rofi -show drun"
 hl.exec_cmd("wl-paste --type text --watch cliphist store &")
 hl.exec_cmd("wl-paste --type image --watch cliphist store &")
 hl.on("hyprland.start", function () 
-   hl.exec_cmd("waybar & mako & wifi-manager & awww-daemon & xsettingsd & easyeffects --gapplication-service &")
+   hl.exec_cmd("waybar & mako & wifi-manager & awww-daemon & xsettingsd &")
  end)
 
 
