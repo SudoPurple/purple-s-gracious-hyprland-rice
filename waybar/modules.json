@@ -83,10 +83,11 @@
 },
 
     "hyprland/language": {
-        "format": "󰌌 {short}",
+        "format": "󰌌 {}",
+        "format-English (US)": "EN",
+        "format-Persian": "FA",
         "format-en": "EN",
         "format-ir": "FA",
-        "format-fa": "FA",
         "keyboard-name": "at-translated-set-2-keyboard",
         "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
     },
