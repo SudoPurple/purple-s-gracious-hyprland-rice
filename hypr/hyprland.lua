@@ -382,3 +382,12 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+-- Spotify freedom rule: float and bypass Electron minimum window size restrictions
+hl.window_rule({
+    name  = "spotify-freedom-minsize",
+    match = { class = "^[Ss]potify$" },
+
+    float    = true,
+    min_size = "1 1",
+})
