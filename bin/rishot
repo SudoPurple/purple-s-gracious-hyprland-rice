@@ -66,5 +66,12 @@ rundir="${XDG_RUNTIME_DIR:-$HOME/.cache}"
 mkdir -p "$rundir" 2>/dev/null || rundir="/tmp"
 lock="$rundir/rishot.lock"
 exec 9>"$lock"
-flock -n 9 || { echo "rishot: already running" >&2; exit 0; }
+
+if ! flock -n 9; then
+	# Auto-recover if a previous quickshell screenshot instance hung after saving
+	pkill -9 -f "qs.*rishot" 2>/dev/null || true
+	sleep 0.1
+	flock -n 9 || { echo "rishot: already running" >&2; exit 0; }
+fi
+
 exec env RISHOT_MODE="$mode" qs -p "$dir"
