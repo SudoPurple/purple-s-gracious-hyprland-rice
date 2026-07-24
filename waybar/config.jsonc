@@ -19,6 +19,7 @@
 	"tray",
         "pulseaudio",
         "network",
+        "hyprland/language",
 
         "custom/sysmon",
 

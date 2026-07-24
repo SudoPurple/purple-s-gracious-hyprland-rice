@@ -78,7 +78,8 @@ window#waybar {
 #bluetooth,
 #backlight,
 #custom-sysmon,
-#custom-arch {
+#custom-arch,
+#language {
     color: @primary;
 }
 

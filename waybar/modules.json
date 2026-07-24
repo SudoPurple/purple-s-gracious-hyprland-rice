@@ -82,6 +82,15 @@
   "restart-interval": 1
 },
 
+    "hyprland/language": {
+        "format": "󰌌 {short}",
+        "format-en": "EN",
+        "format-ir": "FA",
+        "format-fa": "FA",
+        "keyboard-name": "at-translated-set-2-keyboard",
+        "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    },
+
     "custom/power": {
         "format": "",
         "tooltip": false,
